@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link th:href="@{/css/estilos.css}" rel="stylesheet" type="text/css">
+
+  <script th:src="@{/js/script.js}" type="text/javascript"></script>
+</head>
+<body>
+
+
+
+
+<h2 th:onclick="mensagem()">Cadastrar itens</h2>
+
+<form method="post" th:object="${Item}" th:action="@{/salvar}" enctype="multipart/form-data">
+
+  Nome: <input type="text" name="nome" th:field="*{nome}"> <br />
+  Valor: <input type="int" name="valor" th:field="*{valor}"> <br />
+  Tipo: <input type="text" name="tipo" th:field="*{tipo}"> <br />
+  modeloR: <input type="text" name="modelo referente" th:field="*{modeloR}"> <br />
+  fabricante: <input type="text" name="Fabricante" th:field="*{fabricante}"> <br />
+  exemplar: <input type="file" name="file"/>
+
+  <button type="submit">Enviar</button>
+</form>
+
+
+
+</body>
+</html>

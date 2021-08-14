@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+
+
+<h2>ITENS</h2>
+<br/>
+<p th:text="${#request.getParameter('msg')}"></p>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NOME</th>
+    <th>TIPO</th>
+    <th>MODELO REFERENTE</th>
+    <th>VALOR</th>
+    <th>FABRICANTE</th>
+  </tr>
+
+  <tr th:each="Item : ${listaItem}">
+    <td th:text="${Item.id}">ID</td>
+    <td th:text="${Item.nome}">Genero</td>
+    <td th:text="${Item.tipo}">Titulo</td>
+    <td th:text="${Item.modeloR}">Ano</td>
+    <td th:text="${Item.valor}">Ano</td>
+    <td th:text="${Item.fabricante}">Ano</td>
+    <!--<td><a th:href="@{'/deletar/' + ${Item.id}}">Deletar </a></td>
+    <td><a th:href="@{'/editar/' + ${Item.id}}">Editar </a></td>-->
+    <td><img width="100px" th:src="@{'/images/' + ${Item.getImageUri()}}" alt="imagem"/></td>
+  </tr>
+</table>
+
+
+
+
+
+</body>
+</html>

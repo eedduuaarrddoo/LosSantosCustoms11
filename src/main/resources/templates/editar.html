@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+
+
+<h2>Edição de Itens</h2>
+<form method="post" th:object="${item}" th:action="@{/salvar}">
+  <input type="text" readonly name="id" th:field="*{id}"> <br />
+  Nome: <input type="text" name="nome" th:field="*{nome}"> <br />
+  Título: <input type="text" name="titulo" th:field="*{valor}"> <br />
+  Lancamento: <input type="text" name="anoLancamento" th:field="*{tipo}"> <br />
+  Temporadas: <input type="text" name="temporadas" th:field="*{modeloR}"> <br />
+  Episodios: <input type="text" name="episodios" th:field="*{fabricante}"> <br />
+  <button type="submit">Enviar</button>
+</form>
+
+</body>
+</html>

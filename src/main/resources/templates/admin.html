@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h2>Lista de itens</h2>
+<a href="/cadastro">Cadastrar Item </a>
+<br/>
+<p th:text="${#request.getParameter('msg')}"></p>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>nome</th>
+        <th>Tipo</th>
+        <th>valor</th>
+        <th>fabricante</th>
+        <th>ModeloReferente</th>
+    </tr>
+    <tr th:each="item : ${listaItem}">
+        <td th:text="${item.id}">ID</td>
+        <td th:text="${item.nome}">Genero</td>
+        <td th:text="${item.valor}">Valor</td>
+        <td th:text="${item.tipo}">Tipo</td>
+        <td th:text="${item.modeloR}">Modelo</td>
+        <td th:text="${item.fabricante}">Fabricante</td>
+        <td><a th:href="@{'/deletar/' + ${item.id}}">Deletar </a></td>
+        <td><a th:href="@{'/editar/' + ${item.id}}">Editar </a></td>
+        <td><img width="100px" th:src="@{'/images/' + ${item.getImageUri()}}" alt="imagem"/></td>
+    </tr>
+</table>
+
+</body>
+</html>
